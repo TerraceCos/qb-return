@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="referrer" content="no-referrer">
+<meta name="robots" content="noindex, nofollow">
+<title>Terrace Dashboard sign-in</title>
+<link rel="stylesheet" href="style.css">
+<script>
+  // Intuit returns here after sign-in (production return addresses must be https). This page only forwards the
+  // browser to the dashboard running on Tim's own computer. It stores nothing, loads nothing else, holds no secrets,
+  // and the one-time code is useless without the app's secret, which never leaves that computer.
+  (function () {
+    var q = new URLSearchParams(location.search);
+    if (q.has('code') || q.has('error')) {
+      location.replace('http://127.0.0.1:3000/intuit/callback' + location.search);
+    }
+  })();
+</script>
+</head>
+<body>
+<header><b>Terrace Construction</b></header>
+<main>
+  <h1>Terrace Dashboard sign-in</h1>
+  <p>If you just signed in to QuickBooks, your browser is being sent back to the Terrace Dashboard on your computer.
+     If nothing happens, make sure the dashboard is running and open
+     <a href="http://127.0.0.1:3000/admin.html">http://127.0.0.1:3000/admin.html</a>.</p>
+  <p>This page is part of a private, internal tool for Terrace Construction, Inc. It is not a public service.</p>
+  <p><a href="eula.html">End-user license agreement</a> · <a href="privacy.html">Privacy policy</a></p>
+</main>
+</body>
+</html>

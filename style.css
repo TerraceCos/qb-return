@@ -1,0 +1,8 @@
+:root { --navy: #04327C; --black: #000; --white: #fff; }
+body { margin: 0; font: 16px/1.5 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; color: var(--black); background: var(--white); }
+header { background: var(--navy); color: var(--white); padding: 12px 16px; }
+main { max-width: 760px; margin: 0 auto; padding: 16px; }
+h1 { color: var(--navy); font-size: 22px; }
+h2 { color: var(--navy); font-size: 17px; margin-top: 24px; }
+a { color: var(--navy); }
+.draft { border: 2px solid var(--navy); padding: 8px 12px; border-radius: 6px; }
